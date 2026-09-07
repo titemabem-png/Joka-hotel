@@ -1,0 +1,888 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Joka Hotel | Wolkite</title>
+
+    
+</head>
+  <style>
+    
+     /* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+    padding: 25px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: rgb(196, 197, 216);
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav-links :hover{
+    color: rgb(255, 238, 0);
+    font-size: large;
+    transition: 0.1s;
+    text-overflow: clip;
+}
+
+.book-btn {
+    background: rgb(10, 0, 146);
+    color: rgb(255, 254, 254);
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 115px;
+}
+
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("images/hotel1.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    color: white;
+}
+
+.welcome {
+    font-size: 15px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content > p:not(.welcome) {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: rgb(13, 0, 126);
+    color: rgb(255, 255, 255);
+    padding: 14px 25px;
+    text-decoration: none;
+    border-radius: 115px;
+    
+}
+.hero-btn :hover{
+    background-color: #000000;
+    transition: 0.3s;
+}
+
+
+/* ================================
+   ROOMS
+================================ */
+
+.rooms {
+    padding: 80px 5%;
+    text-align: center;
+    background: #ffffff;
+}
+
+.rooms h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.rooms > p {
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.room-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.room-card {
+    background: white;
+    width: 320px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.room-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.room-card h3 {
+    font-size: 24px;
+    margin: 20px 0 10px;
+}
+
+.room-card p {
+    color: #666;
+    padding: 0 20px;
+    line-height: 1.5;
+}
+
+.room-card a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+
+    background: #222;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.room-card a:hover {
+    background: #555;
+}
+
+
+/* ================================
+   SERVICES
+================================ */
+
+.services {
+    padding: 80px 5%;
+    text-align: center;
+    background: white;
+}
+
+.services h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.service {
+    width: 280px;
+    padding: 35px 25px;
+
+    border: 1px solid #060883;
+    border-radius: 210px;
+
+    transition: 0.3s;
+}
+
+.service h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.service p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 3, 168, 0.1);
+}
+
+
+/* ================================
+   GALLERY
+================================ */
+
+.gallery {
+    padding: 80px 5%;
+    text-align: center;
+    background: #f7f7f7;
+}
+
+.gallery h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+ /* ================================
+   BOOKING
+================================ */
+
+.booking {
+    padding: 80px 5%;
+    text-align: center;
+    background: white;
+}
+
+.booking h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.booking form {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    text-align: left;
+}
+
+.booking label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.booking input {
+    padding: 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    font-size: 16px;
+}
+
+.booking button {
+    margin-top: 15px;
+    padding: 15px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #222;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.booking button:hover {
+    background: #555;
+}
+
+
+/* ================================
+   CONTACT
+================================ */
+
+.contact {
+    padding: 70px 5%;
+    text-align: center;
+    background: #f7f7f7;
+}
+
+.contact h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.contact p {
+    margin: 12px 0;
+    color: #555;
+    font-size: 17px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: #222;
+    color: white;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .book-btn {
+        display: none;
+    }
+
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 40px;
+    }
+
+    .hero-content > p:not(.welcome) {
+        font-size: 16px;
+    }
+
+
+    .rooms h2,
+    .services h2,
+    .gallery h2,
+    .booking h2,
+    .contact h2 {
+        font-size: 32px;
+    }
+
+
+    .room-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+
+    .gallery-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-container img {
+        height: 180px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .welcome {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container img {
+        height: 220px;
+    }
+
+}
+    </style>
+
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+
+            <h1 class="logo">JOKA HOTEL</h1>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="#booking" class="book-btn">Book Now</a>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Hero -->
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <p class="welcome">WELCOME TO JOKA HOTEL</p>
+
+                <h2>
+                    Comfort & Hospitality
+                    <br>
+                    In Wolkite
+                </h2>
+
+                <p>
+                    Enjoy a comfortable stay and memorable
+                    hospitality at Joka Hotel.
+                </p>
+
+                <a href="#booking" class="hero-btn">
+                    Book Your Stay
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Rooms -->
+        <section id="rooms" class="rooms">
+
+            <h2>Our Rooms</h2>
+
+            <p>
+                Choose a comfortable room for your stay.
+            </p>
+
+            <div class="room-container">
+
+                <div class="room-card">
+
+                    <img src="images/room1.jpg" alt="Standard Room">
+
+                    <h3>Standard Room</h3>
+
+                    <p>
+                        Comfortable room for a relaxing stay.
+                    </p>
+
+                    <a href="#booking">Book Now</a>
+
+                </div>
+
+
+                <div class="room-card">
+
+                    <img src="images/room2.jpg" alt="Deluxe Room">
+
+                    <h3>Deluxe Room</h3>
+
+                    <p>
+                        Enjoy more space and extra comfort.
+                    </p>
+
+                    <a href="#booking">Book Now</a>
+
+                </div>
+
+
+                <div class="room-card">
+
+                    <img src="images/room3.jpg" alt="Family Room">
+
+                    <h3>Family Room</h3>
+
+                    <p>
+                        A comfortable room for families.
+                    </p>
+
+                    <a href="#booking">Book Now</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Services -->
+        <section id="services" class="services">
+
+            <h2>Our Services</h2>
+
+            <div class="service-container">
+
+                <div class="service">
+                    <h3>Free Wi-Fi</h3>
+                    <p>
+                        Stay connected during your visit.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>Restaurant</h3>
+                    <p>
+                        Enjoy delicious meals and drinks.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>Parking</h3>
+                    <p>
+                        Safe and convenient parking.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Gallery -->
+        <section id="gallery" class="gallery">
+
+            <h2>Our Gallery</h2>
+
+            <div class="gallery-container">
+
+                <img src="images/hotel1.jpg" alt="Joka Hotel">
+
+                <img src="images/room1.jpg" alt="Hotel Room">
+                <img src="images/room5.jpg" alt="Hotel Room">
+                <img src="images/room6.jpg" alt="Hotel Room">
+                <img src="images/room7.jpg" alt="Hotel Room">               
+                <img src="images/room7.jpg" alt="Hotel Room">
+                
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Booking -->
+        <section id="booking" class="booking">
+
+            <h2>Book Your stay</h2>
+
+            <form>
+ <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                >
+
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                >
+
+
+                <label for="checkin">Check-in Date</label>
+                <input
+                    type="date"
+                    id="checkin"
+                >
+
+
+                <label for="checkout">Check-out Date</label>
+                <input
+                    type="date"
+                    id="checkout"
+                >
+
+
+                <label for="guests">Number of Guests</label>
+                <input
+                    type="number"
+                    id="guests"
+                    min="1"
+                    placeholder="Number of guests"
+                >
+
+
+                <button type="submit">
+                    Book Now
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+
+            <h2>Contact Us</h2>
+
+            <p>📍 Wolkite, Ethiopia</p>
+
+            <p>📞 Phone: +251 XXX XXX XXX</p>
+
+            <p>✉️ Email: info@jokahotel.com</p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 Joka Hotel. All Rights Reserved.
+        </p>
+
+    </footer>
+    
+
+</body>
+<script>
+  // ========================================
+// JOKA HOTEL - JAVASCRIPT
+// ========================================
+
+
+// 1. Booking Form
+// ========================================
+
+const bookingForm = document.querySelector(".booking form");
+
+bookingForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+    const guests = document.getElementById("guests").value;
+
+
+    // Check required fields
+
+    if (
+        name === "" ||
+        email === "" ||
+        checkin === "" ||
+        checkout === "" ||
+        guests === ""
+    ) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+
+    // Check dates
+
+    if (checkout <= checkin) {
+        alert("Check-out date must be after check-in date.");
+        return;
+    }
+
+
+    // Successful booking message
+
+    alert(
+        "Thank you, " +
+        name +
+        "! Your booking request has been received."
+    );
+
+
+    // Clear form
+
+    bookingForm.reset();
+
+});
+
+
+// 2. Smooth Navigation
+// ========================================
+
+const navLinks = document.querySelectorAll(".nav-links a");
+
+navLinks.forEach(function (link) {
+
+    link.addEventListener("click", function (event) {
+
+        const targetId = link.getAttribute("href");
+
+        if (targetId.startsWith("#")) {
+
+            event.preventDefault();
+
+            const targetSection =
+                document.querySelector(targetId);
+
+            if (targetSection) {
+
+                targetSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+
+    });
+
+});
+
+
+// 3. Book Now Buttons
+// ========================================
+
+const bookButtons =
+    document.querySelectorAll(
+        ".book-btn, .hero-btn, .room-card a"
+    );
+
+bookButtons.forEach(function (button) {
+
+    button.addEventListener("click", function (event) {
+
+        const target =
+            document.querySelector("#booking");
+
+        if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+
+// 4. Gallery Image Click
+// ========================================
+
+const galleryImages =
+    document.querySelectorAll(".gallery-container img");
+
+galleryImages.forEach(function (image) {
+
+    image.addEventListener("click", function () {
+
+        alert("You selected this hotel image.");
+
+    });
+
+});
+
+
+// 5. Welcome Message
+// ========================================
+
+console.log(
+    "Welcome to Joka Hotel website!"
+);
+  </script>
+</html>
